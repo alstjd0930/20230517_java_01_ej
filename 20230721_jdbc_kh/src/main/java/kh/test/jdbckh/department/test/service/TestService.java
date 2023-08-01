@@ -1,6 +1,7 @@
 package kh.test.jdbckh.department.test.service;
 
 import java.sql.Connection;
+import java.util.List;
 
 import kh.test.jdbckh.department.test.model.TestDao;
 import kh.test.jdbckh.department.test.vo.TestVo;
@@ -14,6 +15,13 @@ public class TestService {
 		TestVo result=null;		//자료형 맞춰주고
 		Connection conn = getConnection();
 		result = dao.selectOne(conn,departmentNo );
+		close(conn);
+		return result;
+	}
+	public List<TestVo> selectAll( ) { 
+		List<TestVo>  result=null;		//자료형 맞춰주고
+		Connection conn = getConnection();
+		result = dao.selectAll(conn);
 		close(conn);
 		return result;
 	}
