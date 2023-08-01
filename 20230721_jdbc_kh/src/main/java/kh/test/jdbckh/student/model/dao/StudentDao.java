@@ -143,6 +143,13 @@ public class StudentDao {
 		//  확인용 System.out.println(result);
 		return result;
 	}
+	public List<StudentVo> selectList(){
+		List<StudentVo> result = null;
+		
+		return result;
+	}
+	
+	
 	// DB에서 tb_student 테이블의 있는 모든 내용을 읽어서 꺼냄.
 	public List<StudentVo> selectListStudent(Connection conn, String searchWord) {  // 검색
 		List<StudentVo> result = null;
@@ -167,12 +174,10 @@ public class StudentDao {
 			// select query 문이면 ResultSet 모양
 			// insert/update/delete 문이면 int 모양
 			rs = pstmt.executeQuery();
-			
+				
 			// 5. ResultSet 에서 row(record)=한줄 읽어오기 위해 cursor(포인트)를 이동함.
 			result = new ArrayList<StudentVo>();
 			while(rs.next() == true) {
-				//  한줄row/record 를 읽을 준비 완료
-				// 확인용도. System.out.println( rs.getString("STUDENT_NAME") );
 				StudentVo vo = new StudentVo();
 				vo.setStudentNo(rs.getString("Student_No"));
 				vo.setDepartmentNo( rs.getString("department_no"));
@@ -208,9 +213,7 @@ public class StudentDao {
 			pstmt = conn.prepareStatement(queryTotalCnt);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				//오류 함수는 컬럼명이 될수 없음 -  totalCnt = rs.getInt("count(*)");
 				result = rs.getInt("cnt");
-				//totalCnt = rs.getInt(1);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
