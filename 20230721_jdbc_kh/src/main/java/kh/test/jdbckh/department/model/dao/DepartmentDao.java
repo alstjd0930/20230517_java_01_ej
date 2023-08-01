@@ -14,14 +14,13 @@ import kh.test.jdbckh.department.model.dto.DepartmentDto;
 public class DepartmentDao {
 	//// === 기본 5 개 
 	// 모든 행 읽기
-	public List<DepartmentDto> selectList(Connection conn){
-		System.out.println("[Dept Dao selectList]");
-		List<DepartmentDto> result = null;
-		//TODO
-		System.out.println("[Dept Dao selectList] return:"+result);
-		return result;
-	}
+
 	// 한 행 읽기 - PK로where조건
+	
+	
+	
+	
+	
 	public DepartmentDto selectOne(Connection conn, String departmentNo){
 		System.out.println("[Dept Dao selectOne] departmentNo:"+departmentNo);
 		DepartmentDto result = null;
@@ -47,6 +46,22 @@ public class DepartmentDao {
 			close(pstmt);
 		}
 		System.out.println("[Dept Dao selectOne] return:"+result);
+		return result;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public List<DepartmentDto> selectList(Connection conn){
+		System.out.println("[Dept Dao selectList]");
+		List<DepartmentDto> result = null;
+		//TODO
+		System.out.println("[Dept Dao selectList] return:"+result);
 		return result;
 	}
 	// 한 행 삽입 - DepartmentDto 자료형을 받아와야 함.

@@ -19,7 +19,17 @@
 	개설여부 : ${dvo.openYn }<br>
 	정원 : ${dvo.capacity }<br>
 </c:if>
-
+	
+	
+	<%-- if(searchword !=null){
+	<a href="<%=request.getContextPath() %>/student/list">무시무시</a> 
+	StudentVo vo = (StudnetVo)request.getatt("dvo")
+	vo.getdepartment
+	
+	
+	
+	--%>
+	
 	<a href="${pageContext.request.contextPath }/dept/list">다시 찾기</a>
 </body>
 </html>

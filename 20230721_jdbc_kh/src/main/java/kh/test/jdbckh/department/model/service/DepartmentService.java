@@ -11,13 +11,11 @@ import kh.test.jdbckh.department.model.dto.DepartmentDto;
 public class DepartmentService {
 	private DepartmentDao dao = new DepartmentDao();
 	
-	public List<DepartmentDto> selectList(){
-		List<DepartmentDto> result = null;
-		Connection conn = getConnection();
-		result = dao.selectList(conn);
-		close(conn);
-		return result;
-	}
+	
+	
+	
+	
+	
 	// 한 행 읽기 - PK로where조건
 	public DepartmentDto selectOne(String departmentNo){
 		DepartmentDto result = null;
@@ -26,6 +24,31 @@ public class DepartmentService {
 		close(conn);
 		return result;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public List<DepartmentDto> selectList(){
+		List<DepartmentDto> result = null;
+		Connection conn = getConnection();
+		result = dao.selectList(conn);
+		close(conn);
+		return result;
+	}
+	
+	
 	// 한 행 삽입 - DepartmentDto 자료형을 받아와야 함.
 	public int insert(DepartmentDto dto){
 		int result = 0;
