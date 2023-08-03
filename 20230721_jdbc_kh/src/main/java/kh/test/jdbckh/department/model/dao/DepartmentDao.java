@@ -27,11 +27,11 @@ public class DepartmentDao {
 		String query = "select DEPARTMENT_NO, DEPARTMENT_NAME, CATEGORY, OPEN_YN, CAPACITY from tb_Department"
 					+ " where DEPARTMENT_NO = ?";
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		ResultSet rs = null; 
 		try {
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, departmentNo);
-			rs = pstmt.executeQuery();
+			rs = pstmt.executeQuery();   
 			if(rs.next()) {
 				result = new DepartmentDto(rs.getString("DEPARTMENT_NO"), 
 						rs.getString("DEPARTMENT_NAME"), 
